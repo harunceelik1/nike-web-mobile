@@ -20,24 +20,31 @@ class Categories extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             categoryItem(
-              icon: Icon(Icons.archive_outlined),
-              name: "Archive",
+              icon: Icon(
+                Icons.man,
+              ),
+              name: "Man",
               price: "",
             ),
             categoryItem(
-              icon: Icon(Icons.message_outlined),
-              name: "Sent Message",
+              icon: Icon(Icons.woman_outlined),
+              name: "Woman",
               price: "",
               active: true,
             ),
             categoryItem(
-              icon: Icon(Icons.sports_mma_sharp),
-              name: "Spam",
+              icon: Icon(Icons.child_friendly),
+              name: "Kids",
               price: "",
             ),
             categoryItem(
-              icon: Icon(Icons.archive_outlined),
-              name: "Archive",
+              icon: Icon(Icons.add_circle),
+              name: "New",
+              price: "",
+            ),
+            categoryItem(
+              icon: Icon(Icons.shopping_basket),
+              name: "Total",
               price: "",
             ),
           ],

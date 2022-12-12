@@ -36,7 +36,42 @@ class _HomeScreenState extends State<HomeScreen> {
 
     Widget buildMainArea() {
       if (deviceType == "mobile") {
-        return ChatScreen();
+        return Stack(
+          children: [
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              top: 0,
+              child: Row(
+                children: [
+                  Expanded(flex: 2, child: ChatScreen()),
+                ],
+              ),
+            ),
+            categoryVisible
+                ? Positioned(
+                    right: 0,
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: Container(
+                      color: Color.fromARGB(85, 0, 0, 0),
+                    ),
+                  )
+                : Positioned(
+                    top: 0, left: 0, right: 0, bottom: 0, child: SizedBox()),
+            categoryVisible
+                ? Positioned(
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: width / 1.5,
+                    child: Categories())
+                : Positioned(
+                    top: 0, left: 0, right: 0, bottom: 0, child: SizedBox()),
+          ],
+        );
       } else if (deviceType == "tablet") {
         return Stack(children: [
           Positioned(

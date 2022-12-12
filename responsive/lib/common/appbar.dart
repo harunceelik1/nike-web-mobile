@@ -29,47 +29,52 @@ class _AppBar1State extends State<AppBar1> {
 
     var deviceType = checkDevice(width);
     if (deviceType == "mobile") {
-      return Container(
-          color: Colors.grey.shade200,
-          height: 60,
-          width: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: 20,
-                    child: Image.asset("images/logo.png")),
-                Container(
-                  width: width * 0.5,
-                  child: TextField(
-                    style: TextStyle(color: Colors.white70),
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(2),
-                        hintText: "Search",
-                        hintStyle: TextStyle(color: Colors.white, fontSize: 14),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide.none),
-                        fillColor: Colors.grey.shade400,
-                        filled: true,
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            child: Icon(
-                              Icons.search_outlined,
-                              color: Colors.white,
-                            ),
-                          ),
-                        )),
+      return SafeArea(
+        child: Container(
+            height: 80,
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: widget.onCategoryClick,
+                    child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 20,
+                        child: Image.asset("images/logo.png")),
                   ),
-                ),
-                Icon(Icons.person),
-              ],
-            ),
-          ));
+                  Container(
+                    width: width * 0.45,
+                    child: TextField(
+                      style: TextStyle(color: Colors.white70),
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(2),
+                          hintText: "Search",
+                          hintStyle:
+                              TextStyle(color: Colors.white, fontSize: 14),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide.none),
+                          fillColor: Colors.grey.shade400,
+                          filled: true,
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Container(
+                              child: Icon(
+                                Icons.search_outlined,
+                                color: Colors.white,
+                              ),
+                            ),
+                          )),
+                    ),
+                  ),
+                  Icon(Icons.shopping_basket_outlined),
+                ],
+              ),
+            )),
+      );
     } else if (deviceType == "tablet") {
       return Container(
           height: 50,
