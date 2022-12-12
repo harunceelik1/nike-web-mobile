@@ -31,32 +31,54 @@ class _ChatScreenState extends State<ChatScreen>
         width: double.infinity,
         child: ListView(
           children: [
-            chatInfo(
-                avatar: 'images/nft7.png',
-                name: "Harun Çelik",
-                title: "Welcome,",
-                icon: Icons.notifications_outlined),
-            SizedBox(
-              height: 10,
-            ),
-            Text("Today's classes",
-                style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 24, 14, 43))),
-            SizedBox(
-              height: 10,
-            ),
-            Expanded(flex: 1, child: cardList()),
-            SizedBox(
-              height: 5,
-            ),
-            TabPageSelector(
-                controller: _tabController,
-                indicatorSize: 8,
-                color: Colors.grey,
-                selectedColor: Color.fromARGB(255, 48, 12, 54),
-                borderStyle: BorderStyle.none)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Expanded(
+                flex: 1,
+                child: Container(
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Nike Winflo 9",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline4
+                                ?.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                          ),
+                          Text("Men's road running shoes"),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Image.asset("images/dollar-symbol.png"),
+                              Text(
+                                "175",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline4
+                                    ?.copyWith(
+                                        fontSize: 24,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400),
+                              )
+                            ],
+                          ),
+                          Container(
+                              width: 400,
+                              child: Image.asset("images/shoes.png"))
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
           ],
         ));
   }

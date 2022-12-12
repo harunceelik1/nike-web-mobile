@@ -19,7 +19,7 @@ mainDevice(double width) {
     return "mobile";
   } else if (width <= 768) {
     return "tablet";
-  } else if (width <= 1024) {
+  } else if (width <= 2048) {
     return "desktop";
   } else {
     return "large";
@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [
                 Expanded(flex: 3, child: Categories()),
-                Expanded(flex: 4, child: ChatScreen()),
+                Expanded(flex: 5, child: ChatScreen()),
                 Expanded(flex: 5, child: Conversation()),
               ],
             ),
@@ -155,14 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   top: 0, left: 0, right: 0, bottom: 0, child: SizedBox()),
         ]);
       } else {
-        return Row(
-          children: [
-            Expanded(flex: 2, child: Categories()),
-            Expanded(flex: 3, child: ChatScreen()),
-            Expanded(flex: 4, child: Conversation()),
-            Expanded(flex: 3, child: ChatInfo()),
-          ],
-        );
+        return SizedBox();
       }
     }
 
