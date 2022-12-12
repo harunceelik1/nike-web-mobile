@@ -137,6 +137,18 @@ class Conversation extends StatelessWidget {
               color: Color(0xFFE8E8EE),
               tail: true,
               isSender: false,
+            ),
+            BubbleSpecialThree(
+              text: "Thanks",
+              color: Color(0xFFE8E8EE),
+              tail: true,
+              isSender: false,
+            ),
+            BubbleSpecialThree(
+              text: "Thanks",
+              color: Color(0xFFE8E8EE),
+              tail: true,
+              isSender: false,
             )
           ],
         ));

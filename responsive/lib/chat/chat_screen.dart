@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:responsive/widget/cardList.dart';
+import 'package:responsive/class/model.dart';
+import 'package:responsive/widget/screen_list.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+  // final Shoes shoes;
+  // ChatScreen(this.shoes);
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -29,57 +31,14 @@ class _ChatScreenState extends State<ChatScreen>
                 left: BorderSide(color: Colors.grey.shade300),
                 right: BorderSide(color: Colors.grey.shade300))),
         width: double.infinity,
-        child: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Expanded(
-                flex: 1,
-                child: Container(
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Nike Winflo 9",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline4
-                                ?.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                          ),
-                          Text("Men's road running shoes"),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Image.asset("images/dollar-symbol.png"),
-                              Text(
-                                "175",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline4
-                                    ?.copyWith(
-                                        fontSize: 24,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w400),
-                              )
-                            ],
-                          ),
-                          Container(
-                              width: 400,
-                              child: Image.asset("images/shoes.png"))
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            )
-          ],
+        child: Expanded(
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: ListModel.items.length,
+            itemBuilder: ((context, index) {
+              return ScreenList(list: ListModel.items[index]);
+            }),
+          ),
         ));
   }
 }
