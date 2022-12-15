@@ -10,12 +10,12 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border(
-                left: BorderSide(color: Colors.grey.shade300),
-                right: BorderSide(color: Colors.grey.shade300))),
+        // decoration: BoxDecoration(
+        //     border: Border(
+        //         left: BorderSide(color: Colors.grey.shade100),
+        //         right: BorderSide(color: Colors.grey.shade300))),
         width: double.infinity,
+        color: Colors.black54,
         child: ListView(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
@@ -68,9 +68,12 @@ class categoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // decoration: BoxDecoration(
+      //     color: active ? Colors.grey.shade200 : Colors.white,
+      //     border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
       decoration: BoxDecoration(
-          color: active ? Colors.grey.shade200 : Colors.white,
-          border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
+          color: Colors.black12,
+          border: Border(bottom: BorderSide(color: Colors.grey.shade600))),
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,12 +84,11 @@ class categoryItem extends StatelessWidget {
                 child: icon,
               ),
               SizedBox(
-                width: 10,
+                width: 20,
               ),
               Text(name),
             ],
           ),
-          Text(price),
         ],
       ),
     );

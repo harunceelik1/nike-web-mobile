@@ -26,6 +26,7 @@ class _AppBar1State extends State<AppBar1> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
+    String input = "Search";
 
     var deviceType = checkDevice(width);
     if (deviceType == "mobile") {
@@ -51,7 +52,7 @@ class _AppBar1State extends State<AppBar1> {
                       style: TextStyle(color: Colors.white70),
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(2),
-                          hintText: "Search",
+                          hintText: input,
                           hintStyle:
                               TextStyle(color: Colors.white, fontSize: 14),
                           border: OutlineInputBorder(
@@ -98,7 +99,7 @@ class _AppBar1State extends State<AppBar1> {
                       style: TextStyle(color: Colors.white70),
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(2),
-                          hintText: "Search",
+                          hintText: input,
                           hintStyle:
                               TextStyle(color: Colors.white, fontSize: 14),
                           border: OutlineInputBorder(
@@ -123,47 +124,99 @@ class _AppBar1State extends State<AppBar1> {
             )),
       );
     } else if (deviceType == "desktop") {
-      return Container(
-          height: 50,
-          width: double.infinity,
-          color: Colors.grey.shade200,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Conversations"),
-                InkWell(
-                    onTap: widget.onInfoClick, child: Icon(Icons.info_rounded)),
-              ],
-            ),
-          ));
+      return SafeArea(
+        child: Container(
+            height: 80,
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: widget.onCategoryClick,
+                    child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 20,
+                        child: Image.asset("images/logo.png")),
+                  ),
+                  Container(
+                    width: width * 0.45,
+                    child: TextField(
+                      style: TextStyle(color: Colors.white70),
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(2),
+                          hintText: input,
+                          hintStyle:
+                              TextStyle(color: Colors.white, fontSize: 14),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide.none),
+                          fillColor: Colors.grey.shade400,
+                          filled: true,
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Container(
+                              child: Icon(
+                                Icons.search_outlined,
+                                color: Colors.white,
+                              ),
+                            ),
+                          )),
+                    ),
+                  ),
+                  Icon(Icons.shopping_basket_outlined),
+                ],
+              ),
+            )),
+      );
     } else {
-      return Container(
-          height: 50,
-          width: double.infinity,
-          color: Colors.grey.shade200,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Home"),
-                SizedBox(
-                  width: 15,
-                ),
-                Text("Conversations"),
-                SizedBox(
-                  width: 15,
-                ),
-                Text("Profile"),
-                SizedBox(
-                  width: 15,
-                ),
-                Text("Support"),
-              ],
-            ),
-          ));
+      return SafeArea(
+        child: Container(
+            height: 80,
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: widget.onCategoryClick,
+                    child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 20,
+                        child: Image.asset("images/logo.png")),
+                  ),
+                  Container(
+                    width: width * 0.45,
+                    child: TextField(
+                      style: TextStyle(color: Colors.white70),
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(2),
+                          hintText: input,
+                          hintStyle:
+                              TextStyle(color: Colors.white, fontSize: 14),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide.none),
+                          fillColor: Colors.grey.shade400,
+                          filled: true,
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Container(
+                              child: Icon(
+                                Icons.search_outlined,
+                                color: Colors.white,
+                              ),
+                            ),
+                          )),
+                    ),
+                  ),
+                  Icon(Icons.shopping_basket_outlined),
+                ],
+              ),
+            )),
+      );
     }
   }
 }

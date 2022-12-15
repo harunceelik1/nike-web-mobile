@@ -81,8 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
             top: 0,
             child: Row(
               children: [
-                Expanded(flex: 5, child: ChatScreen()),
-                Expanded(flex: 5, child: Conversation()),
+                Expanded(flex: width < 768 ? 7 : 2, child: ChatScreen()),
+                Expanded(flex: width < 768 ? 3 : 2, child: Conversation()),
               ],
             ),
           ),

@@ -18,16 +18,16 @@ class ListModel {
     Shoes(
       'Nike Winflo 9 ',
       "Men's road running shoes",
-      "images/background_nike.png",
+      "images/nike.png",
       "images/dollar-symbol.png",
       "images/shoes.png",
       '175',
-      'Camp',
+      'The Winflo 9 gives you the support you need to match your speed. It has a secure fit that keeps your foot in place as the miles go by. We added plenty of foam through the midsole, giving you extra pep to every step. Lace up, lock in, win your goals.',
     ),
     Shoes(
       'Nike Winflo ',
       "Men's road running shoes",
-      "images/background_nike.png",
+      "images/nike.png",
       "images/dollar-symbol.png",
       "images/shoes1.webp",
       '145',
@@ -36,7 +36,7 @@ class ListModel {
     Shoes(
       'Nike Winflo 9 ',
       "Men's road running shoes",
-      "images/background_nike.png",
+      "images/nike.png",
       "images/dollar-symbol.png",
       "images/shoes.png",
       '175',
