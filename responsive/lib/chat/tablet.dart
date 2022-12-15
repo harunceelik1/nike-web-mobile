@@ -1,20 +1,17 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:responsive/class/model.dart';
 
-class ScreenList extends StatefulWidget {
-  const ScreenList({super.key, required this.list});
+class Tablet extends StatefulWidget {
+  const Tablet({super.key, required this.list});
   final Shoes list;
 
   @override
-  State<ScreenList> createState() => _ScreenListState();
+  State<Tablet> createState() => _TabletState();
 }
 
-class _ScreenListState extends State<ScreenList> {
-  bool _isSelected = false;
-
+class _TabletState extends State<Tablet> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -78,10 +75,10 @@ class _ScreenListState extends State<ScreenList> {
                       alignment: AlignmentDirectional.center,
                       children: [
                         Container(
-                            width: width <= 576 ? width * 0.8 : 350,
+                            width: width <= 764 ? width * 0.8 : 350,
                             child: Image.asset(widget.list.image)),
                         Container(
-                          width: width <= 576 ? width * 0.8 : 350,
+                          width: width <= 764 ? width * 0.8 : 350,
                           child: Image.asset(widget.list.image3),
                         ),
                       ],
@@ -123,7 +120,7 @@ class _ScreenListState extends State<ScreenList> {
                             children: [
                               sizeContainer(number: "6"),
                               sizeContainer(number: "6.5"),
-                              sizeContainer(number: "7"),
+                              sizeContainer(number: "7 "),
                               sizeContainer(number: "7.5"),
                             ],
                           ),
@@ -194,41 +191,3 @@ class sizeContainer extends StatelessWidget {
     );
   }
 }
-// Container(
-//                       child: ListView.builder(
-//                           scrollDirection: Axis.horizontal,
-//                           physics: BouncingScrollPhysics(),
-//                           itemBuilder: (context, index) => InkWell(
-//                                 onTap: () {
-//                                   setState(() {
-//                                     selectItem = index;
-//                                   });
-//                                 },
-//                                 child: Container(
-//                                   child: Card(
-//                                     color: selectItem == index
-//                                         ? Color.fromARGB(255, 52, 112, 161)
-//                                         : Colors.grey,
-//                                     // ignore: sort_child_properties_last
-//                                     child: SizedBox(
-//                                       width: 60,
-//                                       child: Center(
-//                                         child: Text(
-//                                           numbers[index],
-//                                           style: selectItem == index
-//                                               ? TextStyle(
-//                                                   color: Colors.white,
-//                                                   fontSize: 15)
-//                                               : TextStyle(
-//                                                   color: Colors.grey.shade700),
-//                                         ),
-//                                       ),
-//                                     ),
-//                                     shape: RoundedRectangleBorder(
-//                                         borderRadius:
-//                                             BorderRadius.circular(10)),
-//                                   ),
-//                                 ),
-//                               ),
-//                           itemCount: numbers.length),
-//                     ),

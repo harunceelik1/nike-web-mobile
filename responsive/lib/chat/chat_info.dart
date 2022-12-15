@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:responsive/chat/categories_screen.dart';
 
 class ChatInfo extends StatelessWidget {
   const ChatInfo({super.key});

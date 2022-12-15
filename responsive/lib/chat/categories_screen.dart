@@ -15,7 +15,7 @@ class Categories extends StatelessWidget {
         //         left: BorderSide(color: Colors.grey.shade100),
         //         right: BorderSide(color: Colors.grey.shade300))),
         width: double.infinity,
-        color: Colors.black54,
+        color: Colors.black12,
         child: ListView(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
@@ -73,7 +73,7 @@ class categoryItem extends StatelessWidget {
       //     border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
       decoration: BoxDecoration(
           color: Colors.black12,
-          border: Border(bottom: BorderSide(color: Colors.grey.shade600))),
+          border: Border(bottom: BorderSide(color: Colors.black54))),
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
