@@ -18,6 +18,7 @@ class _ScreenListState extends State<ScreenList> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     var _mobileWidth = 576;
 
     String _size = "Size";
@@ -72,7 +73,7 @@ class _ScreenListState extends State<ScreenList> {
                     height: 40,
                   ),
                   Expanded(
-                    flex: 5,
+                    flex: height < 842 ? 3 : 5,
                     child: Stack(
                       clipBehavior: Clip.none,
                       alignment: AlignmentDirectional.center,
@@ -88,7 +89,7 @@ class _ScreenListState extends State<ScreenList> {
                     ),
                   ),
                   Expanded(
-                    flex: 3,
+                    flex: height < 804 ? 3 : 3,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -101,16 +102,17 @@ class _ScreenListState extends State<ScreenList> {
                         ),
                         Container(
                             // width: width <= 576 ? width * 0.9 - 50 : 200,
-                            width: width * 0.9,
+                            // width: width * 0.9,
                             child: Text(
-                              widget.list.description,
-                              maxLines: 5,
-                            )),
+                          widget.list.description,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: height < 804 ? 3 : 5,
+                        )),
                       ],
                     ),
                   ),
                   Expanded(
-                      flex: 4,
+                      flex: height < 804 ? 4 : 5,
                       child: Container(
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,33 +121,33 @@ class _ScreenListState extends State<ScreenList> {
                           Wrap(
                             direction: Axis.horizontal,
                             spacing: 10,
-                            runSpacing: 20,
+                            runSpacing: 10,
                             children: [
                               sizeContainer(number: "6"),
                               sizeContainer(number: "6.5"),
                               sizeContainer(number: "7"),
                               sizeContainer(number: "7.5"),
+                              Container(
+                                child: Card(
+                                  color: Color.fromARGB(192, 151, 196, 28),
+                                  // ignore: sort_child_properties_last, prefer_const_constructors
+                                  child: SizedBox(
+                                    width: 150,
+                                    height: 30,
+                                    child: Center(
+                                      child: Text(
+                                        "Add to cart",
+                                      ),
+                                    ),
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5)),
+                                ),
+                              ),
                             ],
                           ),
                           SizedBox(
                             height: 20,
-                          ),
-                          Container(
-                            child: Card(
-                              color: Color.fromARGB(192, 151, 196, 28),
-                              // ignore: sort_child_properties_last, prefer_const_constructors
-                              child: SizedBox(
-                                width: 150,
-                                height: 30,
-                                child: Center(
-                                  child: Text(
-                                    "Add to cart",
-                                  ),
-                                ),
-                              ),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5)),
-                            ),
                           ),
                         ],
                       ))),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -139,7 +141,7 @@ class _DesktopState extends State<Desktop> {
                     height: 40,
                   ),
                   Expanded(
-                      flex: 3,
+                      flex: 4,
                       child: Container(
 
                           // width: width * 0.8,
@@ -160,11 +162,11 @@ class _DesktopState extends State<Desktop> {
                                 children: [
                                   sizeContainer(number: "6"),
                                   sizeContainer(number: "6.5"),
-                                  sizeContainer(number: "7 "),
+                                  sizeContainer(number: "7"),
                                   sizeContainer(number: "7.5"),
                                 ],
                               ),
-                              Container(
+                              Flexible(
                                 child: Card(
                                   color: Color.fromARGB(192, 151, 196, 28),
                                   // ignore: sort_child_properties_last, prefer_const_constructors

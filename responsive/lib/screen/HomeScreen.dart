@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:responsive/chat/categories_screen.dart';
-import 'package:responsive/chat/info.dart';
+import 'package:responsive/chat/chat_info.dart';
+
 import 'package:responsive/chat/chat_screen.dart';
-import 'package:responsive/chat/dekstop.dart';
 import 'package:responsive/chat/desktopList.dart';
 import 'package:responsive/chat/tabletEkrani.dart';
 import 'package:responsive/chat/tablet.dart';
@@ -122,41 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   top: 0, left: 0, right: 0, bottom: 0, child: SizedBox()),
         ]);
       } else if (deviceType == "desktop") {
-        return Stack(children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Row(
-              children: [
-                Expanded(flex: 8, child: DesktopList()),
-                Expanded(flex: 3, child: ChatInfo()),
-              ],
-            ),
-          ),
-          infoVisible
-              ? Positioned(
-                  right: 0,
-                  left: 0,
-                  top: 0,
-                  bottom: 0,
-                  child: Container(
-                    color: Color.fromARGB(122, 0, 0, 0),
-                  ),
-                )
-              : Positioned(
-                  top: 0, left: 0, right: 0, bottom: 0, child: SizedBox()),
-          infoVisible
-              ? Positioned(
-                  right: 0,
-                  top: 0,
-                  bottom: 0,
-                  width: width / 2 - 50,
-                  child: ChatInfo())
-              : Positioned(
-                  top: 0, left: 0, right: 0, bottom: 0, child: SizedBox()),
-        ]);
+        return Row(
+          children: [
+            Expanded(flex: 8, child: DesktopList()),
+            Expanded(flex: 5, child: ChatInfo()),
+          ],
+        );
       } else {
         return SizedBox();
       }

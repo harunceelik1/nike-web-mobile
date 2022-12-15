@@ -66,7 +66,7 @@ class _TabletState extends State<Tablet> {
                   Row(
                     children: [
                       Expanded(
-                        flex: 5,
+                        flex: 4,
                         child: Stack(
                           clipBehavior: Clip.none,
                           alignment: AlignmentDirectional.center,
@@ -135,7 +135,7 @@ class _TabletState extends State<Tablet> {
                     height: 40,
                   ),
                   Expanded(
-                      flex: 3,
+                      flex: 5,
                       child: Container(
 
                           // width: width * 0.8,
