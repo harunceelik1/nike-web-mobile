@@ -52,7 +52,7 @@ class Categories extends StatelessWidget {
   }
 }
 
-class categoryItem extends StatelessWidget {
+class categoryItem extends StatefulWidget {
   final String name;
   final Icon icon;
   final String price;
@@ -66,30 +66,41 @@ class categoryItem extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<categoryItem> createState() => _categoryItemState();
+}
+
+class _categoryItemState extends State<categoryItem> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      // decoration: BoxDecoration(
-      //     color: active ? Colors.grey.shade200 : Colors.white,
-      //     border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
-      decoration: BoxDecoration(
-          color: Colors.black12,
-          border: Border(bottom: BorderSide(color: Colors.black54))),
-      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Container(
-                child: icon,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Text(name),
-            ],
-          ),
-        ],
+    return InkWell(
+      splashColor: Colors.deepOrange,
+      onTap: (() {
+        setState(() {});
+      }),
+      child: Container(
+        // decoration: BoxDecoration(
+        //     color: active ? Colors.grey.shade200 : Colors.white,
+        //     border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
+        decoration: BoxDecoration(
+            color: Colors.black12,
+            border: Border(bottom: BorderSide(color: Colors.black54))),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Container(
+                  child: widget.icon,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(widget.name),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
