@@ -13,8 +13,8 @@ class ChatInfo extends StatelessWidget {
         body: Container(
             decoration: BoxDecoration(
                 border: Border(
-                    left: BorderSide(color: Colors.grey.shade300),
-                    right: BorderSide(color: Colors.grey.shade300))),
+                    left: BorderSide(color: Colors.grey.shade800),
+                    right: BorderSide(color: Colors.grey.shade800))),
             width: double.infinity,
             child: ListView(
               children: [
@@ -26,7 +26,15 @@ class ChatInfo extends StatelessWidget {
                 categoryItem(
                     name: "Email",
                     icon: Icon(Icons.email_outlined),
-                    price: 'harun.celik@gmail.com')
+                    price: 'harun.celik@gmail.com'),
+                categoryItem(
+                    name: "Phone",
+                    icon: Icon(Icons.phone_iphone_outlined),
+                    price: '+90 (537) 886 42 32'),
+                categoryItem(
+                    name: "Balance",
+                    icon: Icon(Icons.account_balance_wallet_outlined),
+                    price: '540\$'),
               ],
             )));
   }
@@ -47,7 +55,7 @@ class profileItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
+          border: Border(bottom: BorderSide(color: Colors.grey.shade800))),
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,7 +86,7 @@ class profileItem extends StatelessWidget {
             ],
           ),
           Text(
-            'Last seen recently',
+            'Ayakkabı Kurdu',
             style: Theme.of(context).textTheme.bodySmall,
           ),
         ],
@@ -102,7 +110,7 @@ class categoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
+          border: Border(bottom: BorderSide(color: Colors.grey.shade800))),
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:responsive/chat/categories_screen.dart';
-import 'package:responsive/chat/chat_info.dart';
+import 'package:responsive/chat/info.dart';
 import 'package:responsive/chat/chat_screen.dart';
+import 'package:responsive/chat/dekstop.dart';
+import 'package:responsive/chat/desktopList.dart';
 import 'package:responsive/chat/tabletEkrani.dart';
 import 'package:responsive/chat/tablet.dart';
 import 'package:responsive/common/appbar.dart';
+import 'package:responsive/widget/bottomNav.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -30,6 +33,7 @@ mainDevice(double width) {
 class _HomeScreenState extends State<HomeScreen> {
   bool infoVisible = false;
   bool categoryVisible = false;
+  final color_Theme = Color.fromARGB(27, 24, 43, 255);
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -126,9 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
             bottom: 0,
             child: Row(
               children: [
-                Expanded(flex: 3, child: Categories()),
-                Expanded(flex: 5, child: ChatScreen()),
-                Expanded(flex: 5, child: Conversation()),
+                Expanded(flex: 8, child: DesktopList()),
+                Expanded(flex: 3, child: ChatInfo()),
               ],
             ),
           ),
@@ -160,39 +163,39 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return Scaffold(
-      body: Column(children: [
-        AppBar1(
-          onCategoryClick: () {
-            if (categoryVisible) {
-              setState(() {
-                categoryVisible = false;
-                infoVisible = false;
-              });
-            } else {
-              setState(() {
-                categoryVisible = true;
-                infoVisible = false;
-              });
-            }
-          },
-          onInfoClick: () {
-            if (infoVisible) {
-              setState(() {
-                categoryVisible = false;
-                infoVisible = false;
-              });
-            } else {
-              setState(() {
-                categoryVisible = false;
-                infoVisible = true;
-              });
-            }
-          },
-        ),
-        Expanded(
-          child: buildMainArea(),
-        ),
-      ]),
-    );
+        body: Column(children: [
+          AppBar1(
+            onCategoryClick: () {
+              if (categoryVisible) {
+                setState(() {
+                  categoryVisible = false;
+                  infoVisible = false;
+                });
+              } else {
+                setState(() {
+                  categoryVisible = true;
+                  infoVisible = false;
+                });
+              }
+            },
+            onInfoClick: () {
+              if (infoVisible) {
+                setState(() {
+                  categoryVisible = false;
+                  infoVisible = false;
+                });
+              } else {
+                setState(() {
+                  categoryVisible = false;
+                  infoVisible = true;
+                });
+              }
+            },
+          ),
+          Expanded(
+            child: buildMainArea(),
+          ),
+        ]),
+        bottomNavigationBar: bottomNavigation(color_Theme: color_Theme));
   }
 }

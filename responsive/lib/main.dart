@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive/common/appbar.dart';
 import 'package:responsive/screen/HomeScreen.dart';
-import 'package:responsive/screen/MediaScreen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -16,7 +16,7 @@ class _AppBar1State extends State<AppBar1> {
       return "mobile";
     } else if (width <= 768) {
       return "tablet";
-    } else if (width <= 1024) {
+    } else if (width <= 2048) {
       return "desktop";
     } else {
       return "large";
@@ -94,7 +94,39 @@ class _AppBar1State extends State<AppBar1> {
                         child: Image.asset("images/logo.png")),
                   ),
                   Container(
-                    width: width * 0.45,
+                      width: width * 0.4,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Men")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Women")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Kids")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("New")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Total")),
+                        ],
+                      )),
+                  Container(
+                    width: width * 0.2,
                     child: TextField(
                       style: TextStyle(color: Colors.white70),
                       decoration: InputDecoration(
@@ -133,15 +165,47 @@ class _AppBar1State extends State<AppBar1> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: widget.onCategoryClick,
-                    child: CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        radius: 20,
-                        child: Image.asset("images/logo.png")),
+                  CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 20,
+                      child: Image.asset("images/logo.png")),
+                  Container(
+                      width: width * 0.4,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Men")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Women")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Kids")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("New")),
+                          InkWell(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Text("Total")),
+                        ],
+                      )),
+                  SizedBox(
+                    width: 20,
                   ),
                   Container(
-                    width: width * 0.45,
+                    width: width * 0.15,
                     child: TextField(
                       style: TextStyle(color: Colors.white70),
                       decoration: InputDecoration(

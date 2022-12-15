@@ -28,7 +28,7 @@ class Categories extends StatelessWidget {
             ),
             categoryItem(
               icon: Icon(Icons.woman_outlined),
-              name: "Woman",
+              name: "Women",
               price: "",
               active: true,
             ),
