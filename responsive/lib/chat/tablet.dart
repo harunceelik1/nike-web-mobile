@@ -21,6 +21,7 @@ class _TabletState extends State<Tablet> {
 
     String _size = "Size";
     String _description = "Description";
+    String _addCart = "Add to cart";
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -71,41 +72,70 @@ class _TabletState extends State<Tablet> {
                           alignment: AlignmentDirectional.center,
                           children: [
                             Container(
-                                width: width <= 768 ? width * 0.8 : width * 0.7,
+                                width: width <= 768 ? width * 0.7 : width * 0.7,
                                 child: Image.asset(widget.list.image)),
                             Container(
-                              width: width <= 768 ? width * 0.8 : width * 0.7,
+                              width: width <= 768 ? width * 0.7 : width * 0.7,
                               child: Image.asset(widget.list.image3),
                             ),
                           ],
                         ),
                       ),
+                      SizedBox(
+                        width: 20,
+                      ),
                       Expanded(
-                        flex: 3,
+                        flex: 4,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
                               _description,
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle2
-                                  ?.copyWith(fontWeight: FontWeight.bold),
+                                  ?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 10.0, // shadow blur
+                                    color: Colors.black, // shadow color
+                                    offset: Offset(5.0,
+                                        2.0), // how much shadow will be shown
+                                  ),
+                                ],
+                              ),
                             ),
                             Container(
+
                                 // width: width <= 576 ? width * 0.9 - 50 : 200,
                                 width: width * 0.9,
                                 child: Text(
+                                  overflow: TextOverflow.ellipsis,
                                   widget.list.description,
                                   maxLines: 5,
+                                  style: TextStyle(
+                                    // ignore: prefer_const_literals_to_create_immutables
+                                    shadows: [
+                                      Shadow(
+                                        blurRadius: 10.0, // shadow blur
+                                        color: Colors.black, // shadow color
+                                        offset: Offset(5.0,
+                                            5.0), // how much shadow will be shown
+                                      ),
+                                    ],
+                                  ),
                                 )),
                           ],
                         ),
                       ),
                     ],
                   ),
+                  SizedBox(
+                    height: 40,
+                  ),
                   Expanded(
-                      flex: 4,
+                      flex: 3,
                       child: Container(
 
                           // width: width * 0.8,
@@ -124,7 +154,7 @@ class _TabletState extends State<Tablet> {
                                 spacing: 10,
                                 runSpacing: 20,
                                 children: [
-                                  sizeContainer(number: "ALTII"),
+                                  sizeContainer(number: "6"),
                                   sizeContainer(number: "6.5"),
                                   sizeContainer(number: "7 "),
                                   sizeContainer(number: "7.5"),
@@ -139,7 +169,10 @@ class _TabletState extends State<Tablet> {
                                     height: 30,
                                     child: Center(
                                       child: Text(
-                                        "Add to cart",
+                                        _addCart,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .subtitle1,
                                       ),
                                     ),
                                   ),
