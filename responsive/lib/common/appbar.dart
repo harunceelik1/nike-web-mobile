@@ -71,7 +71,26 @@ class _AppBar1State extends State<AppBar1> {
                           )),
                     ),
                   ),
-                  Icon(Icons.shopping_basket_outlined),
+                  InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext) {
+                            return AlertDialog(
+                              title: new Text("Alert!"),
+                              content: Text("Empty Basket"),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("OK"))
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Icon(Icons.shopping_basket_outlined)),
                 ],
               ),
             )),
@@ -150,7 +169,26 @@ class _AppBar1State extends State<AppBar1> {
                           )),
                     ),
                   ),
-                  Icon(Icons.shopping_basket_outlined),
+                  InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext) {
+                            return AlertDialog(
+                              title: new Text("Alert!"),
+                              content: Text("Empty Basket"),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("OK"))
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Icon(Icons.shopping_basket_outlined)),
                 ],
               ),
             )),
@@ -229,7 +267,26 @@ class _AppBar1State extends State<AppBar1> {
                           )),
                     ),
                   ),
-                  Icon(Icons.shopping_basket_outlined),
+                  InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext) {
+                            return AlertDialog(
+                              title: new Text("Alert!"),
+                              content: Text("Empty Basket"),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("OK"))
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Icon(Icons.shopping_basket_outlined)),
                 ],
               ),
             )),
