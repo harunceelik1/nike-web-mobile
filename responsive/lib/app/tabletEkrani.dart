@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:responsive/chat/tablet.dart';
+import 'package:responsive/app/tablet.dart';
 import 'package:responsive/class/model.dart';
 
 class Conversation extends StatelessWidget {

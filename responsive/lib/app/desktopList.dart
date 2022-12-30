@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:responsive/chat/dekstop.dart';
+import 'package:responsive/app/dekstop.dart';
 import 'package:responsive/class/model.dart';
 
 class DesktopList extends StatefulWidget {

@@ -167,12 +167,12 @@ class _ScreenListState extends State<ScreenList> {
                               child: DropdownButton<String>(
                                 menuMaxHeight: 200,
                                 hint: Text(
-                                  "Choose Cssolors",
+                                  "Choose Colors",
                                   style: TextStyle(fontSize: 14),
                                 ),
                                 underline: SizedBox(),
                                 dropdownColor:
-                                    Colors.transparent.withOpacity(0.58),
+                                    Colors.transparent.withOpacity(0.5),
                                 isExpanded: true,
                                 value: value,
                                 items: colors.map(buildMenuItem).toList(),

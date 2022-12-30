@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:responsive/chat/categories_screen.dart';
-import 'package:responsive/chat/chat_info.dart';
+import 'package:responsive/app/categories_screen.dart';
+import 'package:responsive/app/chat_info.dart';
 
-import 'package:responsive/chat/chat_screen.dart';
-import 'package:responsive/chat/desktopList.dart';
-import 'package:responsive/chat/tabletEkrani.dart';
+import 'package:responsive/app/chat_screen.dart';
+import 'package:responsive/app/desktopList.dart';
+import 'package:responsive/app/tabletEkrani.dart';
 import 'package:responsive/common/appbar.dart';
 import 'package:responsive/widget/bottomNav.dart';
 
