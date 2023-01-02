@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppBar1 extends StatefulWidget {
@@ -21,6 +22,28 @@ class _AppBar1State extends State<AppBar1> {
     } else {
       return "large";
     }
+  }
+
+  onayAl_iOS() {
+    showDialog(
+      context: context,
+      builder: (_) => CupertinoAlertDialog(
+        title: Text("Sepetiniz Boş"),
+        content: Text("Sepete ürün eklemek ister misiniz ? "),
+        actions: [
+          CupertinoDialogAction(
+              onPressed: (() {
+                Navigator.of(context).pop();
+              }),
+              child: Text("Evet")),
+          CupertinoDialogAction(
+              onPressed: (() {
+                Navigator.of(context).pop();
+              }),
+              child: Text("Hayır")),
+        ],
+      ),
+    );
   }
 
   @override
@@ -73,22 +96,7 @@ class _AppBar1State extends State<AppBar1> {
                   ),
                   InkWell(
                       onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext) {
-                            return AlertDialog(
-                              title: new Text("Alert!"),
-                              content: Text("Empty Basket"),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text("OK"))
-                              ],
-                            );
-                          },
-                        );
+                        onayAl_iOS();
                       },
                       child: Icon(Icons.shopping_basket_outlined)),
                 ],
@@ -171,22 +179,7 @@ class _AppBar1State extends State<AppBar1> {
                   ),
                   InkWell(
                       onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext) {
-                            return AlertDialog(
-                              title: new Text("Alert!"),
-                              content: Text("Empty Basket"),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text("OK"))
-                              ],
-                            );
-                          },
-                        );
+                        onayAl_iOS();
                       },
                       child: Icon(Icons.shopping_basket_outlined)),
                 ],
@@ -269,22 +262,7 @@ class _AppBar1State extends State<AppBar1> {
                   ),
                   InkWell(
                       onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext) {
-                            return AlertDialog(
-                              title: new Text("Alert!"),
-                              content: Text("Empty Basket"),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text("OK"))
-                              ],
-                            );
-                          },
-                        );
+                        onayAl_iOS();
                       },
                       child: Icon(Icons.shopping_basket_outlined)),
                 ],
