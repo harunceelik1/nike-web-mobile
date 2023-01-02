@@ -24,7 +24,7 @@ class _AppBar1State extends State<AppBar1> {
     }
   }
 
-  onayAl_iOS() {
+  sepetDurumu() {
     showDialog(
       context: context,
       builder: (_) => CupertinoAlertDialog(
@@ -96,7 +96,7 @@ class _AppBar1State extends State<AppBar1> {
                   ),
                   InkWell(
                       onTap: () {
-                        onayAl_iOS();
+                        sepetDurumu();
                       },
                       child: Icon(Icons.shopping_basket_outlined)),
                 ],
@@ -179,7 +179,7 @@ class _AppBar1State extends State<AppBar1> {
                   ),
                   InkWell(
                       onTap: () {
-                        onayAl_iOS();
+                        sepetDurumu();
                       },
                       child: Icon(Icons.shopping_basket_outlined)),
                 ],
@@ -262,7 +262,7 @@ class _AppBar1State extends State<AppBar1> {
                   ),
                   InkWell(
                       onTap: () {
-                        onayAl_iOS();
+                        sepetDurumu();
                       },
                       child: Icon(Icons.shopping_basket_outlined)),
                 ],
