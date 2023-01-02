@@ -69,31 +69,7 @@ class _AppBar1State extends State<AppBar1> {
                         radius: 20,
                         child: Image.asset("images/logo.png")),
                   ),
-                  Container(
-                    width: width * 0.45,
-                    child: TextField(
-                      style: TextStyle(color: Colors.white70),
-                      decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(2),
-                          hintText: input,
-                          hintStyle:
-                              TextStyle(color: Colors.white, fontSize: 14),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide.none),
-                          fillColor: Colors.grey.shade400,
-                          filled: true,
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Container(
-                              child: Icon(
-                                Icons.search_outlined,
-                                color: Colors.white,
-                              ),
-                            ),
-                          )),
-                    ),
-                  ),
+                  app_Input(width: width, input: input),
                   InkWell(
                       onTap: () {
                         sepetDurumu();
@@ -152,31 +128,7 @@ class _AppBar1State extends State<AppBar1> {
                               child: Text("Total")),
                         ],
                       )),
-                  Container(
-                    width: width * 0.2,
-                    child: TextField(
-                      style: TextStyle(color: Colors.white70),
-                      decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(2),
-                          hintText: input,
-                          hintStyle:
-                              TextStyle(color: Colors.white, fontSize: 14),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide.none),
-                          fillColor: Colors.grey.shade400,
-                          filled: true,
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Container(
-                              child: Icon(
-                                Icons.search_outlined,
-                                color: Colors.white,
-                              ),
-                            ),
-                          )),
-                    ),
-                  ),
+                  app_Input(width: width * 0.5, input: input),
                   InkWell(
                       onTap: () {
                         sepetDurumu();
@@ -235,31 +187,7 @@ class _AppBar1State extends State<AppBar1> {
                   SizedBox(
                     width: 20,
                   ),
-                  Container(
-                    width: width * 0.15,
-                    child: TextField(
-                      style: TextStyle(color: Colors.white70),
-                      decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(2),
-                          hintText: input,
-                          hintStyle:
-                              TextStyle(color: Colors.white, fontSize: 14),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide.none),
-                          fillColor: Colors.grey.shade400,
-                          filled: true,
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Container(
-                              child: Icon(
-                                Icons.search_outlined,
-                                color: Colors.white,
-                              ),
-                            ),
-                          )),
-                    ),
-                  ),
+                  app_Input(width: width * 0.5, input: input),
                   InkWell(
                       onTap: () {
                         sepetDurumu();
@@ -317,5 +245,43 @@ class _AppBar1State extends State<AppBar1> {
             )),
       );
     }
+  }
+}
+
+class app_Input extends StatelessWidget {
+  const app_Input({
+    Key? key,
+    required this.width,
+    required this.input,
+  }) : super(key: key);
+
+  final double width;
+  final String input;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width * 0.45,
+      child: TextField(
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.all(2),
+            hintText: input,
+            hintStyle: TextStyle(color: Colors.white, fontSize: 14),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide.none),
+            fillColor: Colors.grey.shade800.withOpacity(0.3),
+            filled: true,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Container(
+                child: Icon(
+                  Icons.search_outlined,
+                  color: Colors.white,
+                ),
+              ),
+            )),
+      ),
+    );
   }
 }
